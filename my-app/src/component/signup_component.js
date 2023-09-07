@@ -1,9 +1,22 @@
 import React,{useState} from 'react';
+import {Link } from "react-router-dom";
 import Axios from 'axios';
-import './App.css' ;
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import '../App.css'
+
+
+
+
 
 
 function SignupModal() {
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  const handleLogin = (user) => {
+    setLoggedInUser(user);
+  };
+
     const [formData,setFormData] = useState({
         email: '',
         name: '',
@@ -90,12 +103,15 @@ function SignupModal() {
 
       if (response.status === 201) {
         console.log('User created successfully');
+        toast.success('User created successfully'); // Display a success toast
         // Reset form data or close the modal as needed
       } else {
         console.error('Server error');
+        toast.error('Server error');
       }
     } catch (error) {
       console.error(error);
+      toast.error('An error occurred');
     }
   }
       // Perform your form handling logic here
@@ -105,11 +121,24 @@ function SignupModal() {
   
 
   return (
-    <>
-      <h2>Modal Signup Form</h2>
+    // <>
+    <div>
+     <ToastContainer />
+
+     {loggedInUser ? (
+      
+      <div>
+      {/* <h2>Welcome, {loggedInUser.name}!</h2>
+      <button onClick={() => setLoggedInUser(null)}>Logout</button> */}
+      </div>
+
+     ) :(
+      <div>
+    <h2>Modal Signup Form</h2>
       <button onClick={openModal} style={{ width: 'auto' }}>
-        Sign Up
+        Sign Up!
       </button>
+       {/* <Login onLogin={handleLogin} /> */}
 
       <div id="id01" className="modal">
         <span onClick={closeModal} className="close" title="Close Modal">
@@ -218,13 +247,26 @@ function SignupModal() {
               <button type="submit" className="signupbtn">
                 Sign Up
               </button>
+              <button>
+                <Link to = '/Login'> Login</Link>
+                </button>
+            
             </div>
           </div>
+        
         </form>
+        
       </div>
-    </>
+      </div>
+      )}
+      </div>
+   
   );
   }
+  
 
 
-export default SignupModal;
+export default SignupModal;   // ek file may ak hi component ko defult use kar saktey h
+                              // default componet ko kisi bhi name say import kar saketay bss file name same ho
+
+// export {SignupModal,xyz,abc,}    jab multipale component export kar nay ho to

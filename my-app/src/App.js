@@ -1,10 +1,21 @@
-// // import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignupModal from './component/signup_component';
+import Login from './component/login_component';
+import ForgotPassword from './component/forgetpassword_component';
 
-// function App() {
-//   return (
-//     <h2>hello word</h2>
+function App() {
+    return (
+      <Router>
+        <Routes>
+          <Route path='/' element={ <SignupModal/>}/>
+            <Route path='/login' element={<Login/>}/>
+              <Route path='/forgotpassword' element={<ForgotPassword/>}/>
 
-//   );
-// };
-
-// export default App;
+        </Routes>
+      </Router>
+      
+    );
+  }
+  
+  export default App;
