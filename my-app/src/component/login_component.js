@@ -4,8 +4,8 @@ import Axios from 'axios';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
-import '../App.css';
-// import ForgotPassword from './forgetpassword';
+import '../component/css/login.css'
+
 
 function Login() {  // { onLogin }
   const [loginData, setLoginData] = useState({
@@ -49,42 +49,81 @@ function Login() {  // { onLogin }
 
   return (
    
-    <div>
-         <ToastContainer/>
-      <h2>Login Form</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          <b>Email</b>
-        </label>
-        <input
-          type="text"
-          name="email"
-          value={loginData.email}
-          onChange={handleInputChange}
-          required
-        />
+    // <div>
+    //      <ToastContainer/>
+    //   <h2>Login Form</h2>
+    //   <form onSubmit={handleSubmit}>
+    //     <label htmlFor="email">
+    //       <b>Email</b>
+    //     </label>
+    //     <input
+    //       type="text"
+    //       name="email"
+    //       value={loginData.email}
+    //       onChange={handleInputChange}
+    //       required
+    //     />
+    //     <br/>
+      
+    //     <label htmlFor="psw">
+    //       <b>Password</b>
+    //     </label>
+    //     <input
+    //       type="password"
+    //       name="password"
+    //       value={loginData.password}
+    //       onChange={handleInputChange}
+    //       required
+    //     />
 
-        <label htmlFor="psw">
-          <b>Password</b>
-        </label>
-        <input
-          type="password"
-          name="password"
-          value={loginData.password}
-          onChange={handleInputChange}
-          required
-        />
+    //     <p className="error">{loginError}</p>
 
-        <p className="error">{loginError}</p>
-
-        <button type="submit">Login</button>
-        <button><Link to = '/forgotpassword'>forgetpassword</Link></button>
+    //     <button type="submit">Login</button>
+    //     <button><Link to = '/forgotpassword'>forgetpassword</Link></button>
 
         
        
         
-      </form>
-    </div>
+    //   </form>
+    // </div>
+    
+<div className="login-container">
+  <div className="login-card">
+    <ToastContainer />
+    <h2>Login Form</h2>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="email">
+        <b>Email</b>
+      </label>
+      <input
+        type="text"
+        name="email"
+        value={loginData.email}
+        onChange={handleInputChange}
+        required
+      />
+
+      <label htmlFor="psw">
+        <b>Password</b>
+      </label>
+      <input
+        type="password"
+        name="password"
+        value={loginData.password}
+        onChange={handleInputChange}
+        required
+      />
+
+      <p className="error">{loginError}</p>
+
+      <button type="submit">Login</button>
+      <div className="forgot-password-link">
+        <Link to="/forgotpassword">Forgot Password</Link>
+      </div>
+    </form>
+  </div>
+</div>
+
   );
 }
 

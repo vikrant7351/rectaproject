@@ -1,0 +1,55 @@
+/* Add these styles to your app.css or create a new CSS file */
+
+/* Container for the forgot password card */
+.forgot-password-card {
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Style the form elements */
+  .forgot-password-card label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .forgot-password-card input[type="email"],
+  .forgot-password-card input[type="text"],
+  .forgot-password-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .forgot-password-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Change to your desired button color */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .forgot-password-card button:hover {
+    background-color: #0056b3; /* Change to the hover color you prefer */
+  }
+  
+  /* Style the error message */
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Optional: Add more styles as needed */
+  

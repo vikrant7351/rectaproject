@@ -1,0 +1,68 @@
+/* Add these styles to your app.css or create a new CSS file */
+
+/* Container for the login card */
+.login-card {
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Center the login card vertically on the page */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This will center the card vertically */
+  }
+  
+  /* Style the form elements */
+  .login-card label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .login-card input[type="text"],
+  .login-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .login-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #077bff; /* Change to your desired button color */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-card button:hover {
+    background-color: #0056b3; /* Change to the hover color you prefer */
+  }
+  
+  /* Style the error message */
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Style the "Forgot Password" link */
+  .forgot-password-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Optional: Add more styles as needed */
+  

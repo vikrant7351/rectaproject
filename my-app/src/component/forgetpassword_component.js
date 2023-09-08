@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-import '../App.css'
+import '../component/css/forget.css'
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -90,54 +90,105 @@ function ForgotPassword() {
   };
 
   return (
+    // <div>
+    //   <h2>Forgot Password</h2>
+    //   {!verificationSent ? (
+    //     <form onSubmit={handleSendVerification}>
+    //       <label htmlFor="email">
+    //         <b>Email</b>
+    //       </label>
+    //       <input
+    //         type="email"
+    //         name="email"
+    //         value={email}
+    //         onChange={handleEmailChange}
+    //         required
+    //       />
+    //       <p className="error">{emailError}</p>
+    //       <button type="submit">Send Verification</button>
+    //     </form>
+    //   ) : resetPasswordSuccess ? (
+    //     <div>
+    //       <p>Password reset successfully.</p>
+    //       {/* Display a success message or redirect to login */}
+    //     </div>
+    //   ) : (
+    //     <div>
+    //       <label htmlFor="otp">
+    //         <b>Verification Code</b>
+    //       </label>
+    //       <input
+    //         type="text"
+    //         name="otp"
+    //         value={otp}
+    //         onChange={handleOtpChange}
+    //         required
+    //       />
+    //       <label htmlFor="password">
+    //         <b>New Password</b>
+    //       </label>
+    //       <input
+    //         type="password"
+    //         name="password"
+    //         value={password}
+    //         onChange={handlePasswordChange}
+    //         required
+    //       />
+    //       <button onClick={handleResetPassword}>Reset Password</button>
+    //     </div>
+    //   )}
+    // </div>
+    // Inside your ForgotPassword component JSX
+
+<div className="forgot-password-card">
+  <h2>Forgot Password</h2>
+  {!verificationSent ? (
+    <form onSubmit={handleSendVerification}>
+      <label htmlFor="email">
+        <b>Email</b>
+      </label>
+      <input
+        type="email"
+        name="email"
+        value={email}
+        onChange={handleEmailChange}
+        required
+      />
+      <p className="error">{emailError}</p>
+      <button type="submit">Send Verification</button>
+    </form>
+  ) : resetPasswordSuccess ? (
     <div>
-      <h2>Forgot Password</h2>
-      {!verificationSent ? (
-        <form onSubmit={handleSendVerification}>
-          <label htmlFor="email">
-            <b>Email</b>
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
-          <p className="error">{emailError}</p>
-          <button type="submit">Send Verification</button>
-        </form>
-      ) : resetPasswordSuccess ? (
-        <div>
-          <p>Password reset successfully.</p>
-          {/* Display a success message or redirect to login */}
-        </div>
-      ) : (
-        <div>
-          <label htmlFor="otp">
-            <b>Verification Code</b>
-          </label>
-          <input
-            type="text"
-            name="otp"
-            value={otp}
-            onChange={handleOtpChange}
-            required
-          />
-          <label htmlFor="password">
-            <b>New Password</b>
-          </label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
-          <button onClick={handleResetPassword}>Reset Password</button>
-        </div>
-      )}
+      <p>Password reset successfully.</p>
+      {/* Display a success message or redirect to login */}
     </div>
+  ) : (
+    <div>
+      <label htmlFor="otp">
+        <b>Verification Code</b>
+      </label>
+      <input
+        type="text"
+        name="otp"
+        value={otp}
+        onChange={handleOtpChange}
+        required
+      />
+      <label htmlFor="password">
+        <b>New Password</b>
+      </label>
+      <input
+        type="password"
+        name="password"
+        value={password}
+        onChange={handlePasswordChange}
+        required
+      />
+      <button onClick={handleResetPassword}>Reset Password</button>
+    </div>
+  )}
+</div>
+
   );
 }
 
